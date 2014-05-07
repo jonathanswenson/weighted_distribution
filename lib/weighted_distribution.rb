@@ -2,8 +2,8 @@
 # Constructor expects a hash of object => weight pairs where the
 # weight represents the probability of the corresponding
 # object being selected. follows specification of ryanlecompte's
-# WeightedDistributionizer[link:https://github.com/ryanlecompte/weighted_randomizer]
-# reimplements the sample function to run in O(log(n)) rather than O(n).
+# WeightedRandomizer[link:https://github.com/ryanlecompte/weighted_randomizer]
+# re-implements the sample function to run in O(log(n)) rather than O(n).
 #
 # @example Usage
 #  suit_dist = WeightedDistribution.new({heart: 12, spade: 11, diamond: 10, club:13})
@@ -12,11 +12,11 @@
 # @note Mostly adapted from recipe 5.11 from the Ruby Cookbook.
 class WeightedDistribution
 
-  # Creates a new instance of the WeightedDistributionizer Class
+  # Creates a new instance of the WeightedDistribution Class
   #
   # @param [Hash] object_weights objects with their corresponding
   # weights(key object, value weight)
-  # @return [WeightedDistributionizer]
+  # @return [WeightedDistribution]
   def initialize(object_weights)
     @len = object_weights.length
     @keys = object_weights.keys
