@@ -28,7 +28,7 @@ To sample from a distribution:
 ```ruby
 
   suits = {'heart' => 12, 'spade' => 11, 'diamond' => 10, 'club' => 13}
-  suit_distribution = WeightedRandomizer.new(suits)
+  suit_distribution = WeightedDistribution.new(suits)
 
   # Fetch a single random object.
   suit_distribution.sample # => single object
