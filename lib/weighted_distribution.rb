@@ -17,12 +17,13 @@ class WeightedDistribution
   # @param [Hash] object_weights objects with their corresponding
   # weights(key object, value weight)
   # @return [WeightedDistribution]
-  def initialize(object_weights)
+  def initialize(object_weights, randomizer = Kernel)
     @len = object_weights.length
     @keys = object_weights.keys
     @orig_values = @keys.map{|x| object_weights[x]}
     @values = normalize(@orig_values)
     @csum = cumulative_sum(@values)
+    @randomizer = randomizer
   end
 
   # Samples from the WeightedDistribution. Each object has a
@@ -45,7 +46,7 @@ class WeightedDistribution
   #
   # @return [Object] sampled object from distribution
   def _sample
-    random = Kernel.rand
+    random = @randomizer.rand
     lhs, rhs = 0, @len - 1
 
     while rhs >= lhs
