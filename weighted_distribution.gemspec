@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'weighted_distribution'
-  s.version     = '1.0.0'
+  s.version     = '1.1.0'
   s.date        = '2014-04-02'
   s.summary     = "Sample a weighted distribution of objects."
   s.description = "Sample a weighted distribution of objects."
